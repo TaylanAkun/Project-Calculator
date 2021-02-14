@@ -1,1 +1,1 @@
-# Project-Calculator
+# Multifuctional Calculator
