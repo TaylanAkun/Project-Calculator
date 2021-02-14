@@ -1,0 +1,94 @@
+<html>
+<head>
+<style>
+body {
+background-color:yellow;
+}
+hr {
+background-color:red;
+}
+form{
+background-color:white;
+width:190px;
+height:170px;
+}
+</style>
+</head>
+<script>
+function back() {
+    var value = document.getElementById("display").value;
+    document.getElementById("display").value = value.substr(0, value.length - 1);
+}
+function fact() {
+var i,display,factorial;
+     factorial=1;
+	 display=document.getElementById("display").value;
+	 for(i=1;i<=display;i++)
+	 {
+	     factorial=factorial*i;
+	 }
+	 document.getElementById("display").value=factorial;
+	 }
+function pow(){
+	var n=document.getElementById("display");
+	var res=document.getElementById("R");
+		  if(n.class=='open'){
+		    base=n.value;
+			}
+		  else{
+		  res.innerHTML=n.value;
+		  var base=1;
+		  }
+		  res.innerHTML=Math.pow(res.innerHTML,base);
+		  n.class='open';
+		  n.value="";
+}
+
+function Res(){
+document.calculator.display.value='';
+document.getElementById("R").innerHTML='';
+document.calculator.display.class='close';
+}
+
+</script>
+<body>
+<center><h1>SCIENTIFIC CALCULATOR</h1>
+<hr color="red">
+<hr size="20">
+<form name="calculator">
+<table border="5" border color="red">
+<tr>
+<td colspan="4"><input id="display" class="close" type="text" name="result" placeholder="0" value=""/></td></tr>
+<th><input type="button" value="sin" onClick="document.calculator.display.value=Math.sin(document.calculator.display.value)"></th>
+<th><input type="button" value="cos" onClick="document.calculator.display.value=Math.cos(document.calculator.display.value)"></th>
+<th><input type="button" value="Del" onClick="back()"></th>
+<th><input type="button" value="Res" onClick="Res()"></th>
+</tr><tr>
+<th><input type="button" value="7" onClick="document.calculator.display.value+='7'"/></th>
+<th><input type="button" value="8" onClick="document.calculator.display.value+='8'"></th>
+<th><input type="button" value="9" onClick="document.calculator.display.value+='9'"></th>
+<th><input type="button" value="tan" onClick="document.calculator.display.value=Math.tan(document.calculator.display.value)"/></th>
+</tr><tr>
+<th><input type="button" value="4" onClick="document.calculator.display.value+='4'"></th>
+<th><input type="button" value="5" onClick="document.calculator.display.value+='5'"></th>
+<th><input type="button" value="6" onClick="document.calculator.display.value+='6'"></th>
+<th><input type="button" value="x^n" onClick="pow()"></th>
+</tr><tr>
+<th><input type="button" value="1" onClick="document.calculator.display.value+='1'"></th>
+<th><input type="button" value="2" onClick="document.calculator.display.value+='2'"></th>
+<th><input type="button" value="3" onClick="document.calculator.display.value+='3'"></th>
+<th><input type="button" value="log" onClick="document.calculator.display.value=Math.log(document.calculator.display.value)"></th>
+</tr><tr>
+<th><input type="button" value="0" onClick="document.calculator.display.value+='0'"></th>
+<th><input type="button" value="exp" onClick="document.calculator.display.value+=Math.exp(document.calculator.display.value)"></th>
+<th><input type="button" value="!" onClick="fact()"></th>
+
+</tr>
+</table>
+<p id="R" class="close" type="text" name="result" style="color:red"></p>
+</form>
+<br><br><br>
+<hr color="red">
+<hr size="20">
+</body>
+</html>
